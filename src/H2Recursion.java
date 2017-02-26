@@ -4,12 +4,11 @@ import edu.princeton.cs.introcs.StdDraw;
 public class H2Recursion {
 public static double babyMethod(int guess,int x,int aError){
 	
-	double e = Math.abs(arg0)
-}
-public static void main (String[]args){
-	char c = 0;
-	char a  = 1;
+	double err = Math.abs(x-guess*guess);
 	
-	System.out.println(c<a);
+	if (x<0){
+		return 1
+	} 
 }
+
 }
