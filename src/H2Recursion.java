@@ -6,6 +6,10 @@ public static double babyMethod(double newGuess2,int x,int aError){
 	//founds out the error and used absolute to make sure it it was positive
 	double err = Math.abs(x-newGuess2*newGuess2);
 	
+	/*
+	 * base case
+	 * it is less than 0 because if u try to take a square root of a num less than 0 it is imaginary
+	 */
 	if (x<0){
 		return 1;
 	} 
@@ -24,6 +28,12 @@ public static double babyMethod(double newGuess2,int x,int aError){
 	}
 	
 	
+}
+//test code
+public static void main (String[]args){
+	int x = 25;
+    double  guess = x/2;
+System.out.println(babyMethod(guess,x,2));
 }
 	
 }
