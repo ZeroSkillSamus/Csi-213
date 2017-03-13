@@ -6,6 +6,7 @@
 public class DoublyLinkedList {
 public int size;
 public Node root;
+public Node prev;
 
 public void add(Node n){
         if (n==null) return;
