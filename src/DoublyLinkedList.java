@@ -164,5 +164,37 @@ public class DoublyLinkedList {
             	    return null;
         }
 
-
+        /*
+         * delete node will take in a string n
+         * has 3 case
+         * if the temp is equal to the root
+         * if the temp is equal to the tail
+         * or if the temp is somewhere in the middle
+         */
+        public void deleteNode(String n)
+        {
+        	Node temp = findNode(n);
+        	
+        	//if temp is equal to the root will set the roots next previous to null
+        	if (temp == root)
+        	{
+        		root.getNext().setPrev(null);
+        		root = root.getNext();
+        	
+        	}
+        	//if temp is equal to the tail will set the tails previous next to null
+        	else if (temp == tail)
+        	{
+        		tail.getPrev().setNext(null);
+        		tail = tail.getPrev();
+        	}
+        	//will set the temps next previous to temps previous
+        	//and sets the temps previous next to the temps next
+        	else 
+        	{
+        		temp.getNext().setPrev(temp.getPrev());
+        		temp.getPrev().setNext(temp.getNext());
+        	}
+        }
+        	
 	}
