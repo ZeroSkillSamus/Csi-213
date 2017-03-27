@@ -52,6 +52,63 @@ public class DoublyLinkedList {
 			root = newNode;
 			root.setNext(tail);
 			tail.setPrev(root);
-		}
-	}
+			/*checks to see if the list has more than 1 item 
+	         * if it does will perform 3 cases
+	         */
+	    else
+	 
+	    {
+	    	/*
+	    	 * used to check to see if it is being added after the list
+	    	 * set the tails next node to the newNode
+	    	 * set the newNodes prev to the tail
+	    	 * makes the newNode the tail
+	    	 */
+	    	if(newNode.getName().compareToIgnoreCase(tail.getName())>0)
+	    	{
+	    		tail.setNext(newNode);
+	    		newNode.setPrev(tail);
+	    		tail = newNode;
+	    	}
+	    	/*
+	    	 * used to check to see if the newNode is being added before the list
+	    	 * set the roots prevois to the newNode
+	    	 * sets the newNodes next to the root
+	    	 * makes the newNode the new root
+	    	 */
+	    	else if(newNode.getName().compareToIgnoreCase(root.getName())<0)
+	    	{
+	    		root.setPrev(newNode);
+	    		newNode.setNext(root);
+	    		root = newNode;
+	    	}
+	    	//if both previous arguments fail then we must add in the middle of the list
+	    	else
+	    	{
+	    		//make a temp to iterate through the list
+	    		Node temp = root;
+	    		while (temp != null){
+	    			// if the newNode is greater than, but less than add in the middle
+	    			if (newNode.getName().compareToIgnoreCase(temp.getName())>0 && newNode.getName().compareToIgnoreCase(temp.getNext().getName())<0)
+	    			{
+	    				/*have to the the newnodes next to temps.getnext
+	    				 * then newNodes prev to the temp
+	    				 * set the temps next prevois to the newnode
+	    				 * and the temps next to the newnode
+	    				 */
+	    				newNode.setNext(temp.getNext());
+	    				newNode.setPrev(temp);
+	    			    temp.getNext().setPrev(newNode);
+	    			    temp.setNext(newNode);
+	    			}
+	    			temp = temp.getNext();
+	    		}
+	    	}
+	    }
+	
 }
+      //Destroy my list
+        public void destroyList (){
+        	this.root = null;
+        }
+	}
