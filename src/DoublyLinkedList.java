@@ -111,4 +111,16 @@ public class DoublyLinkedList {
         public void destroyList (){
         	this.root = null;
         }
+        
+        /*
+         * loops through the whole entire list and prints everything forwards
+         */
+        public void traverseForward()
+        {
+        	Node temp = root;
+        	while (temp!=null){
+        		System.out.println(temp.getName());
+        		temp = temp.getNext();
+        	}
+        }
 	}
