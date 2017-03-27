@@ -123,4 +123,46 @@ public class DoublyLinkedList {
         		temp = temp.getNext();
         	}
         }
+        /*
+         * start printing the list starting from the tail instead of the root
+         * to print it backwards
+         */
+        public void traverseBackwards()
+        {
+        	Node temp = tail;
+        	while (temp != null){
+        		System.out.println(temp.getName());
+        		temp = temp.getPrev();
+        	}
+        }
+      //takes in a string and return a node 
+        public Node findNode(String n){
+            
+        	      
+            	  Node currentNode = root;
+            	  
+            	  //traverses the list
+            	    while(currentNode!=null)
+            	    	
+            	    {
+            	    	/*if n is equal to the currentnode name
+            	    	 * print out that the node was found and return the current node 
+            	    	 */
+            	        if (n.equals(currentNode.getName()))
+            	        	
+            	        {
+            	        	System.out.println("Found " + currentNode.getName());
+            	        	return currentNode;
+            	        }
+            	        
+            	       currentNode = currentNode.getNext();
+        }
+            	    //if not found will print not found and returns null
+            	    
+            	    System.out.println(" Not Found " + n);
+            	    
+            	    return null;
+        }
+
+
 	}
