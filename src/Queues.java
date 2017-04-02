@@ -6,4 +6,7 @@ public void enqueue (Node n){
 	
 }
 
+public Node dequeue(Node n){
+	return n;
+}
 }
