@@ -9,4 +9,8 @@ public void push (Node n){
 public Node pop (Node n){
 	return n;
 }
+
+public Node peek (){
+	return node;
+}
 }
