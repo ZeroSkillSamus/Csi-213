@@ -6,4 +6,7 @@ public void push (Node n){
 	
 }
 
+public Node pop (Node n){
+	return n;
+}
 }
