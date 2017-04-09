@@ -84,6 +84,20 @@ public void peek ()
 	//prints the top of the stack
 	System.out.println("Top of Stack = " + head.getName());
 }
+
+//prints the stack 
+public void print()
+{
+	Node temp = head;
+	
+	while(temp != null)
+	{
+		
+		System.out.println(temp.getName());
+		temp = temp.getNext();
+		
+	}
+}
 }
 
 
