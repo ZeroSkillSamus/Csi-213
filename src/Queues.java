@@ -26,10 +26,17 @@ public boolean isEmpty()
 	return (head == null);
 }
 
+//traverses the Queue and prints it
 public void printQueue ()
 {
-	Node temp = head;
+	if (isEmpty())
+	{
+		return;
+	}
 	
+	Node temp = head;
+	//makes sure the list isnt empty
+	//prints the list anytime it runs through the while loop
 	while (temp!=null)
 	{
 		System.out.println(temp.getName());
@@ -38,9 +45,37 @@ public void printQueue ()
 	
 	
 }
-public void enqueue (Node n){
+
+//method that adds to the end of the queue
+public void enqueue (String n){
 	
-}
+	Node newNode = new Node (n);
+	//checks to see if it is empty
+	if (isEmpty()){
+		
+		head = newNode;
+		size++;
+		
+	}
+	
+	else {
+		
+		Node temp = head;
+		//loops through the list until it reaches null and then breaks
+		while (temp.getNext()!=null)
+		{
+			
+			temp = temp.getNext();
+		}
+		//adds the item to the end of the list
+		temp.setNext(newNode);
+		size++;
+		
+	}
+	}
+
+
+
 
 public Node dequeue(Node n){
 	return n;
