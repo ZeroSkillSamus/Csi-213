@@ -15,7 +15,9 @@ public int size(){
 	return counter;
 	}
 
-
+public boolean isEmpty(){
+	return (head == null);
+}
 public void enqueue (Node n){
 	
 }
