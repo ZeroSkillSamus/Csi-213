@@ -80,7 +80,7 @@ public void enqueue (String n){
 public Node dequeue(Node n){
 	return n;
 }
-public Node peek (){
-	return n;
+public void peek (){
+	System.out.println("Top of line ig = " + head.getName());
 }
 }
