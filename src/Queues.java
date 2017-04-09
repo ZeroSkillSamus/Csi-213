@@ -76,10 +76,39 @@ public void enqueue (String n){
 
 
 
+//method that deletes the first thing in the list
+public String dequeue(){
+	//checks to see if it is empty
+	if (isEmpty())
+	{
+		return null;
+	}
+	
+	//checks to see if the size is euql to 1
+	else if(size() == 1)
+	{
+		//stores the head in a temp
+		Node temp = head;
+		//sets the head equal to null
+		head = null;
 
-public Node dequeue(Node n){
-	return n;
+		
+		size--;
+		return temp.getName();
+	}
+	{
+		//stores the head inside a temp
+		Node temp = head;
+		//sets the head equal to the next one instead of setting it equal to null
+		head = head.getNext();
+		
+		size--;
+		return temp.getName();
+	}
 }
+
+
+//method that returns and prints the top of the line of a queue
 public void peek (){
 	System.out.println("Top of line ig = " + head.getName());
 }
