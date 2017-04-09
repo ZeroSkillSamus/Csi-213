@@ -45,17 +45,26 @@ public static Queues stackstoQueues(Stack stack){
 	    return queues;
 		}
 
-	/*public static Stack queuestoStacks(Queues queue)
+//takes the queue and makes it into a stack
+	public static Stack queuestoStacks(Queues queue)
 	{
+		
+		//makes a new stack
 		Stack stack = new Stack();
+		
+		//stores the stuff that you dequeue into a temp
 		String temp = queue.dequeue();
 		
+		//loops until the list is empty
 		while (temp != null) {
+			//pushes what ever you dequeued into the stack
 			stack.push(temp);
+			//decrements the list until the list is empty
 			temp = queue.dequeue();
 		}
 		
 		return stack;
+	}
 		/*int length = queue.size();
 		
 		for ( int i = 0;i<length;i++){
@@ -66,7 +75,7 @@ public static Queues stackstoQueues(Stack stack){
 		*/
 	
 	
-	public static Stack stackstoStacks(Stack stack)
+	/*public static Stack stackstoStacks(Stack stack)
 	{
 		Stack stack1 = new Stack();
 		Stack stack2 = new Stack();
@@ -81,5 +90,6 @@ public static Queues stackstoQueues(Stack stack){
 		
 		return stack2;
 	}
+	*/
 
 	}
