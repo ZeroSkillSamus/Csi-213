@@ -1,88 +1,92 @@
-
-
-
 public class Stack {
-public static Node head;
+public Node head;
 
-public static void push (String n){
-	Node newNode = new Node(n);
-	if (head==null)
+//size method for the stack class
+public int size (){
+	int counter = 0;
+	Node temp = head;
+	while (temp!=null){
+		counter++;
+		temp = temp.getNext();
+	}
+	return counter;
+	}
+
+
+//added the push method which adds to the front of a stack
+public void push (String n){
+	//creates a new node
+	
+Node newNode = new Node(n);
+	//checks to see if the list is empty
+	if (head == null)
 	{
-	      head = newNode;
-	      //System.out.println(head);
 		
-	} 
+		head = newNode;
+		
+	}
+	else 
+	{  
+		//adds to the front of the list
+		newNode.setNext(head);
+        head = newNode;
+        
+    }
+		
+}
+	
+	
+	
+
+public String pop ()
+{
+	//checks to see if the list is empty
+	if (head == null)
+	{
+		
+		return null;
+		
+	}
+	//checks to see if the list has one item in it
+	else if(size() == 1)
+	{
+		//stores the head into a temp
+		Node temp = head;
+		//sets the head euqal to null 
+		head =  null;
+		
+		return temp.getName();
+	}
 	else 
 	{
-		//System.out.println(head);
+		//if the list has more than 1 item in it it will set the head equal to the next item
 		Node temp = head;
-		while(temp!=null)
-		{
-			temp = temp.getNext();
-			
-			System.out.println(newNode);
+	
+		head = head.getNext();
 		
-			
-		}
-		
-		temp = newNode;
-		//System.out.println(n);
-		
+
+		return temp.getName();
 	}
 	
-	//System.out.println(newNode);
+	
 	
 }
-
-public static void pop ()
+//added the peek method
+public void peek ()
 {
-	if (head==null){
-		return;
-	} 
-	else
+	//checks to see if the list is empty
+	if (head == null)
 	{
-	
-		Node temp = head;
-		while(temp!=null)
-		{
-			System.out.println(temp.getPrev());
-			temp = temp.getNext();
-			
-			temp = null;
-		}
-		System.out.println();
-		//temp = null;
+		
+		return;
 		
 	}
-	
+	//prints the top of the stack
+	System.out.println("Top of Stack = " + head.getName());
+}
 }
 
-public static Node peek (){
-	if (head==null)
-		{
-		return null;
-		}
-	else {
-		Node temp = head;
-		while(temp!=null){
-			System.out.println(temp);
-			temp = temp.getNext();
-	
-		}
-	return temp;
-	}
-}
-
-public static void main (String[]args){
-	Node n = new Node("String");
-	push("I");
-	push("Love");
-	push("Computer");
-	push("Science");
-	
-	
-	pop();
 
 	
-}
-}
+
+
