@@ -29,5 +29,19 @@ public void add (int n){
 		}
 		temp.setNext(newNode);
 	}
+	
+}
+
+public void printList (){
+	if (isEmpty()){
+		return;
+	}
+	else {
+		Node temp = head;
+		while (temp!=null){
+			System.out.println(temp.getData());
+			temp = temp.getNext();
+		}
+	}
 }
 }
