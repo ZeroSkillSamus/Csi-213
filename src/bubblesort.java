@@ -18,19 +18,28 @@ public int size (){
 		return counter;
 	}
 }
-public void add (int n){
-	Node newNode = new Node (n);
-	if (isEmpty()){
+public double addNode (double data)
+{
+	Node newNode = new Node (data);
+	
+	if (head==null)
+	{
 		head = newNode;
-	} else {
+		
+	}
+	else 
+	{
 		Node temp = head;
-		while (temp!=null){
+		while (temp.getNext()!=null)
+		{
 			temp = temp.getNext();
 		}
 		temp.setNext(newNode);
 	}
-	
+	return data;
 }
+
+
 
 public void printList (){
 	if (isEmpty()){
@@ -43,5 +52,42 @@ public void printList (){
 			temp = temp.getNext();
 		}
 	}
+}
+public void bubblesortList ()
+{
+	if (head == null){
+		return;
+	}
+	else 
+	{
+
+		  //Node temp = head;
+		
+       for (int i = 0;i<size();i++)
+       {
+    	   Node temp = head;
+    	  
+    	     for (int j = 0;j<size()-1;j++)
+    	     {
+    		  if (temp.getData()>temp.getNext().getData())
+    		  {
+    			  double curr = temp.getData();
+    			  temp.setName(temp.getNext().getData());
+    			  temp.getNext().setName(curr);
+    			 
+    		  }
+    		  temp = temp.getNext();
+    		
+    	  }
+    	 
+    	  
+      }
+     
+      
+     
+      
+
+
+}
 }
 }
