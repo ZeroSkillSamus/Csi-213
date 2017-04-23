@@ -87,7 +87,7 @@ public void printList ()
 		//loop through the entire list
 		while (temp!=null){
 			//print out the goods
-			System.out.println(temp.getData());
+			System.out.print(temp);
 			//make temp equal to the next thing in the list 
 			temp = temp.getNext();
 		}
@@ -115,9 +115,9 @@ public void bubblesortList ()
     	   //sets the temp equal to the head
     	   Node temp = head;
     	  
-    	     for (int j = 0;j<size()-i;j++)
+    	     for (int j = 0;j<size()-1;j++)
     	     {
-    	    	 
+    	    	
     	    //if the data on the left is greater than the data on the right than swap
     		  if (temp.getData()>temp.getNext().getData())
     		  {
