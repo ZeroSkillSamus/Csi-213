@@ -55,12 +55,14 @@ public void addNode (double data)
 	
 	else 
 	{
-		//store the head inside a temp
+		//store the head inside a temp node
 		Node temp = head;
+		//loop through the list 
 		while (temp.getNext()!=null)
 		{
 			temp = temp.getNext();
 		}
+		//set the next null spot to the newNode
 		temp.setNext(newNode);
 	}
 	
