@@ -69,22 +69,40 @@ public void addNode (double data)
 }
 
 
-
-public void printList (){
-	if (isEmpty()){
+/*
+ * method used to print the whole entire list
+ */
+public void printList ()
+{
+	//checks to see if the list is empty
+	//if it is empty return
+	if (isEmpty())
+	{
 		return;
 	}
-	else {
+	else 
+	{
+		//make a temp that stores the head
 		Node temp = head;
+		//loop through the entire list
 		while (temp!=null){
+			//print out the goods
 			System.out.println(temp.getData());
+			//make temp equal to the next thing in the list 
 			temp = temp.getNext();
 		}
 	}
 }
+/*
+ * method that sorts the list
+ * it compares the first thing in the list to the second thing in the list
+ * if the data on the left is greater than the data on the right then it will swap
+ */
 public void bubblesortList ()
 {
-	if (head == null){
+	//checks to see if the list is empty
+	if (isEmpty())
+	{
 		return;
 	}
 	else 
