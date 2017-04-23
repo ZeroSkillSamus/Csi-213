@@ -108,21 +108,30 @@ public void bubblesortList ()
 	else 
 	{
 
-		  //Node temp = head;
 		
+		//loops through the list
        for (int i = 0;i<size();i++)
        {
+    	   //sets the temp equal to the head
     	   Node temp = head;
     	  
-    	     for (int j = 0;j<size()-1;j++)
+    	     for (int j = 0;j<size()-i;j++)
     	     {
+    	    	 
+    	    //if the data on the left is greater than the data on the right than swap
     		  if (temp.getData()>temp.getNext().getData())
     		  {
+    			  /*
+    			   * stores the temps data into a temp variable 
+    			   * than sets the temp.data equal to the temp.next.data
+    			   * then sets the data of temp.next.data equal to the temp variable curr
+    			   */
     			  double curr = temp.getData();
     			  temp.setName(temp.getNext().getData());
     			  temp.getNext().setName(curr);
     			 
     		  }
+    		  //increments temp to the next thing in the list
     		  temp = temp.getNext();
     		
     	  }
