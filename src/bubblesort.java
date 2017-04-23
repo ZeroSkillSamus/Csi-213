@@ -2,33 +2,60 @@
 public class bubblesort {
 public Node head;
 
+/*
+ * checks to see if the list is empty
+ */
 public boolean isEmpty(){
 	return (head==null);
 }
-public int size (){
+/*
+ * added the size method 
+ * it returns the size of the list anytime something is added
+ */
+public int size ()
+{
+	//make a counter 
 	int counter = 0;
-	if (isEmpty()){
+	//if the list is empty return 0
+	if (isEmpty())
+	{
 		return counter;
-	} else {
+	} 
+	else
+	{
+		//store the head inside a temp node
 		Node temp = head;
-		while (temp!=null){
+		//loop through the list
+		while (temp!=null)
+		{
+			//increment the counter by 1 
 			counter++;
+			//go on to the next node in the list until it reaches null and then breaks
 			temp = temp.getNext();
 		}
+		//return the counter
 		return counter;
 	}
 }
-public double addNode (double data)
+/*
+ * method that is used to add something to the end of the list
+ */
+public void addNode (double data)
 {
+	//creates a new node
 	Node newNode = new Node (data);
 	
-	if (head==null)
+	//if the list is empty 
+	if (isEmpty())
 	{
+		//set the head = to the newnode
 		head = newNode;
 		
 	}
+	
 	else 
 	{
+		//store the head inside a temp
 		Node temp = head;
 		while (temp.getNext()!=null)
 		{
@@ -36,7 +63,7 @@ public double addNode (double data)
 		}
 		temp.setNext(newNode);
 	}
-	return data;
+	
 }
 
 
