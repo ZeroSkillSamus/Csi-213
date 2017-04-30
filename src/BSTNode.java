@@ -22,4 +22,8 @@ public BSTNode getRight(){
 public void setRight (BSTNode r){
 	this.right = r;
 }
+
+public String getData(){
+	return data;
+}
 }
