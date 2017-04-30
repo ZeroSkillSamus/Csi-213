@@ -18,4 +18,8 @@ public void setLeft (BSTNode l){
 public BSTNode getRight(){
 	return right;
 }
+
+public void setRight (BSTNode r){
+	this.right = r;
+}
 }
