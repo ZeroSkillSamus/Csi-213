@@ -10,4 +10,12 @@ public BSTNode (String name){
 public BSTNode getLeft(){
 	return this.left;
 }
+
+public void setLeft (BSTNode l){
+	this.left = l;
+}
+
+public BSTNode getRight(){
+	return right;
+}
 }
