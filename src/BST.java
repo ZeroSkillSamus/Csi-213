@@ -155,7 +155,19 @@ public void inorder() {
 				}
 			}
 		}
-	
+		/*
+		 * finds the minimum value in the array 
+		 * recurssively calls the method until we get to null
+		 */
+			public BSTNode findMinimum(BSTNode t)
+			{
+				if (t.getLeft() == null) {
+					return t;
+				} else {
+					return findMinimum(t.getLeft());
+				}
+			}
+
 
 }
 
