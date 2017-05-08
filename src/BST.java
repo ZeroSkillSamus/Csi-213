@@ -34,6 +34,20 @@ public void inorder() {
 
 			return null;
 		}
-    
+
+		//recursively calls the other add method
+		public void add(String d) {
+			BSTNode newNode = new BSTNode(d, 1);
+			BSTNode temp = head;
+
+			if (head == null) {
+				head = newNode;
+			}
+
+			else {
+				add(temp, d);
+			}
+		}
+
 }
 
