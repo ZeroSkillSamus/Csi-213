@@ -88,7 +88,74 @@ public void inorder() {
 				temp.incrementCounter();
 			}
 		}
+		/*
+		 * This method removed one of the leaves from the BST It takes in a
+		 * paramater String n We make a focusnode and a parent node
+		 * then deletes
+		 */
+		public void delete(String n)
+		{
 
+			BSTNode temp = searchBST(n);
+	      //checks for the temp is equal to null
+			if (temp == null)
+			{
+				//prints 
+				System.out.println("Can't delete - " + n
+						+ " does not exist in list.");
+			} else {
+				
+				
+				//checks for no children in the tree
+				if (temp.getLeft() == null && temp.getRight() == null)
+				{
+					if (temp.getParent().getLeft() == null) {
+						temp.getParent().setRight(null);
+					} else {
+						temp.getParent().setLeft(null);
+					}
+
+				}
+
+				//checks if there is a left child but not a right child 
+				else if (temp.getLeft() == null && temp.getRight() != null)
+				{
+					if (temp.getParent().getLeft() == null) {
+						temp.getParent().setRight(temp.getRight());
+					} else {
+						temp.getParent().setLeft(temp.getRight());
+					}
+				}
+
+				//checks if there is a left and 
+				else if (temp.getRight() == null && temp.getLeft() != null) 
+				{
+
+					if (temp.getParent().getRight() == null) {
+						temp.getParent().setLeft(temp.getLeft());
+					} else {
+						temp.getParent().setLeft(temp.getLeft());
+					}
+					
+					
+				}
+				//checks if there are 2 children 
+				else if (temp.getLeft() != null && temp.getRight() != null)
+				{
+					BSTNode temp2 = findMinimum(temp.getRight());
+					String tempdata = temp.getName();
+					temp.setName(temp2.getName());
+					temp2.setName(tempdata);
+
+					if (temp2.getParent().getRight() == temp2) {
+						temp2.getParent().setRight(null);
+					} else if (temp2.getParent().getLeft() == temp2) {
+						temp2.getParent().setLeft(null);
+					}
+				}
+			}
+		}
+	
 
 }
 
