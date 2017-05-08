@@ -1,6 +1,6 @@
 
 public class BSTNode {
-private BSTNode left,right;
+private BSTNode left,right,partner;
 private String data;
 
 public BSTNode (String name){
