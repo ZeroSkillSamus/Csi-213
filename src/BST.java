@@ -16,6 +16,24 @@ public void inorder() {
 
 		}
 	}
+	
+	
+	//searchs for the node and returns null if not found
+		public BSTNode searchBST(String d) {
+			BSTNode focusNode = head;
 
+			while (focusNode != null) {
+				if (d.equalsIgnoreCase(focusNode.getName())) {
+					return focusNode;
+				} else if (d.compareToIgnoreCase(focusNode.getName()) < 0) {
+					focusNode = focusNode.getLeft();
+				} else if (d.compareToIgnoreCase(focusNode.getName()) > 0) {
+					focusNode = focusNode.getRight();
+				}
+			}
+
+			return null;
+		}
+    
 }
 
