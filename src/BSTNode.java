@@ -30,4 +30,10 @@ public String getData(){
 public void setData(String data){
 	this.data = data;
 }
+public void setPartner(BSTNode p){
+	this.partner = p;
+}
+public BSTNode getPartner(){
+	return partner;
+}
 }
